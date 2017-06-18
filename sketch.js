@@ -27,7 +27,7 @@ function draw(){
 function pickLocation(){
     var columns = floor(width/myScale);
     var rows = floor(height/myScale);
-    food = createVector(floor(random(cols)), floor(random(rows)));
+    food = createVector(floor(random(columns)), floor(random(rows)));
     food.mult(myScale);
 }
 
