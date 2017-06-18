@@ -20,4 +20,16 @@ function Snake(){
         this.xspeed = xspeed;
         this.yspeed = yspeed;
     }
+
+    this.death = function(){
+        for(var counter = 0; counter < this.tail.length; counter++){
+            var position = this.tail[counter];
+            var distance = dist(this.x, this.y, position.x, position.y);
+            if(distance < 1){
+                alert("You lost");
+                this.total = 0;
+                this.tail = [];
+            }
+        }
+    }
 }
