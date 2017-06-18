@@ -32,4 +32,17 @@ function Snake(){
             }
         }
     }
+
+    this.update = function(){
+        for(var counter = 0; counter < this.tail.length; counter++){
+            this.tail[counter] = this.tail[counter+1];
+        }
+        if(this.total > 0){
+            this.tail[this.total - 1] = createVector(this.x, this.y);
+        }
+        this.x = this.x + this.xspeed * myScale;
+        this.y = this.y + this.yspeed * myScale;
+        this.x = constrain(this.x, 0, width - myScale);
+        this.y = constrain(this.y, 0, height - myScale);
+    }
 }
