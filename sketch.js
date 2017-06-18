@@ -1,6 +1,7 @@
 var snake;
 var myScale;
 var lastKeyPressed;
+var food;
 
 function setup(){
     createCanvas(600, 600);
@@ -8,9 +9,18 @@ function setup(){
     lastKeyPressed = RIGHT_ARROW;
     myScale = 20;
     frameRate(10);
+    pickLocation();
 }
-function draw() {
+
+function draw(){
     background(51);
+}
+
+function pickLocation(){
+    var columns = floor(width/myScale);
+    var rows = floor(height/myScale);
+    food = createVector(floor(random(cols)), floor(random(rows)));
+    food.mult(myScale);
 }
 
 function keyPressed(){
