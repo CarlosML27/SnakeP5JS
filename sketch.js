@@ -14,6 +14,14 @@ function setup(){
 
 function draw(){
     background(51);
+    if(snake.eat(food)){
+        pickLocation();
+    }
+    snake.death();
+    snake.update();
+    snake.show();
+    fill(255, 0, 100);
+    rect(food.x, food.y, myScale, myScale);
 }
 
 function pickLocation(){
