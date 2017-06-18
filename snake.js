@@ -9,10 +9,15 @@ function Snake(){
     this.eat = function(position) {
         var distance = dist(this.x, this.y, position.x, position.y);
         var eaten = false;
-        if(distance < 1){
+        if (distance < 1) {
             this.total++;
             eaten = true;
         }
         return eaten;
+    }
+
+    this.changeDirection = function(xspeed, yspeed){
+        this.xspeed = xspeed;
+        this.yspeed = yspeed;
     }
 }
