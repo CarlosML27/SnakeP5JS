@@ -45,4 +45,13 @@ function Snake(){
         this.x = constrain(this.x, 0, width - myScale);
         this.y = constrain(this.y, 0, height - myScale);
     }
+
+    this.show = function(){
+        fill(255);
+        for(var counter = 0; counter < this.tail.length; counter++) {
+            rect(this.tail[counter].x, this.tail[counter].y, myScale, myScale);
+        }
+        fill(204, 102, 0);
+        rect(this.x, this.y, myScale, myScale);
+    }
 }
